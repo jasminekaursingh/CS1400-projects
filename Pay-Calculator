@@ -1,3 +1,4 @@
+//This code calculates a user's gross pay based upon their inputs.
 Script started on 2020-08-30 11:12:23-07:00 [TERM="xterm" TTY="/dev/pts/3" COLUM
 NS="80" LINES="24"]
 jksingh@abbott ~/cs1400/project $ pwd
