@@ -1,3 +1,4 @@
+//This code determines the season based upon user's input for date
 Script started on 2020-09-11 18:01:14-07:00 [TERM="xterm" TTY="/dev/pts/3" COLUMNS="90" LINES="24"]
 jksingh@costello ~/cs1400/project $ pwd
 /user/jksingh/cs1400/project
