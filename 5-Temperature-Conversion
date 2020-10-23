@@ -1,3 +1,5 @@
+//Converter for temperature from F to C and vice versa
+//Created a class and main driver program
 Script started on 2020-10-09 20:48:05-07:00 [TERM="xterm" TTY="/dev/pts/7" COLUMNS="190" LINES="24"]
 jksingh@abbott ~/cs1400/project $ pwd
 /user/jksingh/cs1400/project
