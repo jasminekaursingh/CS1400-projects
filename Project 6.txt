@@ -1,0 +1,414 @@
+Script started on 2020-10-19 21:28:23-07:00 [TERM="xterm" TTY="/dev/pts/0" COLUM                                                                                                             NS="189" LINES="50"]
+jksingh@abbott ~/cs1400/project $ pwd
+/user/jksingh/cs1400/project
+jksingh@abbott ~/cs1400/project $ ls -l
+total 1308
+-rw------- 1 jksingh cpp   1407 Sep  6 16:05 Calculations.class
+-rw------- 1 jksingh cpp   1330 Sep  6 16:02 Calculations.java
+-rw------- 1 jksingh cpp   1113 Sep  6 15:22 Calculations.java.save
+-rw------- 1 jksingh cpp   2072 Oct 19 21:24 Fraction.class
+-rw------- 1 jksingh cpp   3335 Oct 19 21:27 Fraction.java
+-rw------- 1 jksingh cpp   2072 Oct 19 21:24 FractionDemo.class
+-rw------- 1 jksingh cpp   2220 Oct 19 21:28 FractionDemo.java
+-rw------- 1 jksingh cpp   1003 Aug 30 11:13 Pay.class
+-rw-r--r-- 1 jksingh cpp    983 Aug 30 11:12 Pay.java
+-rw------- 1 jksingh cpp   2856 Oct  5 23:31 RPS.class
+-rw------- 1 jksingh cpp   3124 Oct  5 23:28 RPS.java
+-rw------- 1 jksingh cpp   2676 Oct  5 22:31 RPS.java.save
+-rw------- 1 jksingh cpp   2095 Oct  9 20:45 Temperature.class
+-rw------- 1 jksingh cpp   3607 Oct  9 20:45 Temperature.java
+-rw------- 1 jksingh cpp    195 Oct  9 15:27 Temperature.java.save
+-rw------- 1 jksingh cpp   2451 Oct  9 20:48 TemperatureDemo.class
+-rw------- 1 jksingh cpp   2380 Oct  9 20:47 TemperatureDemo.java
+-rw-r--r-- 1 jksingh cpp  46184 Oct 19 20:14 hs_err_pid100134.log
+-rw-r--r-- 1 jksingh cpp  47910 Oct 19 20:54 hs_err_pid114391.log
+-rw-r--r-- 1 jksingh cpp  46821 Oct 19 21:11 hs_err_pid120025.log
+-rw-r--r-- 1 jksingh cpp  45226 Oct 18 22:27 hs_err_pid13790.log
+-rw-r--r-- 1 jksingh cpp  46852 Oct 19 16:20 hs_err_pid22186.log
+-rw-r--r-- 1 jksingh cpp  46406 Oct 19 16:32 hs_err_pid26043.log
+-rw-r--r-- 1 jksingh cpp  47620 Oct 19 16:42 hs_err_pid29028.log
+-rw-r--r-- 1 jksingh cpp  47195 Oct 19 17:01 hs_err_pid34448.log
+-rw-r--r-- 1 jksingh cpp  46620 Oct 19 19:31 hs_err_pid85700.log
+-rw-r--r-- 1 jksingh cpp  46951 Oct 19 19:51 hs_err_pid92099.log
+-rw-r--r-- 1 jksingh cpp  46963 Oct 19 19:55 hs_err_pid92989.log
+-rw-r--r-- 1 jksingh cpp  46849 Oct 19 19:55 hs_err_pid93015.log
+-rw-r--r-- 1 jksingh cpp  46166 Oct 19 15:37 hs_err_pid9855.log
+-rw------- 1 jksingh cpp   2572 Aug 30 11:13 pj1.txt
+-rw------- 1 jksingh cpp   3953 Sep  6 16:07 pj2.txt
+-rw------- 1 jksingh cpp   6955 Sep 11 18:03 pj3.txt
+-rw------- 1 jksingh cpp   6361 Oct  5 23:33 pj4.txt
+-rw------- 1 jksingh cpp   9297 Oct  9 20:48 pj5.txt
+-rw------- 1 jksingh cpp      0 Oct 19 21:28 pj6.txt
+-rw-r--r-- 1 jksingh cpp      0 Oct 19 20:14 replay_pid100134.log
+-rw-r--r-- 1 jksingh cpp      0 Oct 19 20:54 replay_pid114391.log
+-rw-r--r-- 1 jksingh cpp 211318 Oct 19 21:11 replay_pid120025.log
+-rw-r--r-- 1 jksingh cpp      0 Oct 18 22:27 replay_pid13790.log
+-rw-r--r-- 1 jksingh cpp      0 Oct 19 16:20 replay_pid22186.log
+-rw-r--r-- 1 jksingh cpp      0 Oct 19 16:32 replay_pid26043.log
+-rw-r--r-- 1 jksingh cpp      0 Oct 19 16:42 replay_pid29028.log
+-rw-r--r-- 1 jksingh cpp      0 Oct 19 17:01 replay_pid34448.log
+-rw-r--r-- 1 jksingh cpp      0 Oct 19 19:31 replay_pid85700.log
+-rw-r--r-- 1 jksingh cpp  32238 Oct 19 19:51 replay_pid92099.log
+-rw-r--r-- 1 jksingh cpp  32238 Oct 19 19:55 replay_pid92989.log
+-rw-r--r-- 1 jksingh cpp  32238 Oct 19 19:55 replay_pid93015.log
+-rw-r--r-- 1 jksingh cpp 211215 Oct 19 15:37 replay_pid9855.log
+-rw------- 1 jksingh cpp   1148 Sep 11 18:01 seasons.class
+-rw------- 1 jksingh cpp   1308 Sep 11 18:00 seasons.java
+-rw------- 1 jksingh cpp   1225 Sep 11 17:32 seasons.java.save
+jksingh@abbott ~/cs1400/project $ cat Fraction.java
+//Jasmine Singh
+//CS1400, Section 05
+//Project 6 - Arithmetic Operations with Fractions
+//10/19/2020
+public class Fraction
+{
+   private int numerator, denominator;
+   private static int created;
+
+   public Fraction()
+   {
+      numerator = 0;
+      denominator = 1;
+   }
+   public Fraction(int num, int den)
+   {
+      if(num==0&&den!=0)
+      {
+         num = 0;
+         den = 1;
+         numerator = num;
+         denominator = den;
+      }else if(den==0)
+      {
+         System.out.println("Denominator cannot be 0.");
+         System.out.println("The fraction is set to 0/1");
+         num = 0;
+         den = 1;
+         numerator = num;
+         denominator = den;
+      }else if(den<0)
+      {
+         num = -1 * num;
+         den = -1 * den;
+         numerator = num;
+         denominator = den;
+      }else
+      {
+         numerator = num;
+         denominator = den;
+      }
+      int gcd = gcd(numerator, denominator);
+      numerator = numerator / gcd;
+      denominator = denominator / gcd;
+      created++;
+   }
+   private int gcd(int num1, int num2)
+   {
+      if(num1 > 0 && num2 > 0)
+      {
+         while(num1 != num2)
+         {
+            if(num1 > num2)
+            {
+               num1 = num1 - num2;
+            }else{
+               num2 = num2 - num1;
+            }
+         }
+      }else if(num1 < 0 && num2 > 0)
+      {
+         num1 = num1 * -1;
+         while(num1 != num2)
+         {
+            if(num1 > num2)
+            {
+               num1 = num1 - num2;
+            }else{
+               num2 = num2 - num1;
+            }
+         }
+      }else
+      {
+         num1 = 1;
+      }
+      return num1;
+   }
+   public Fraction add(Fraction other)
+   {
+      int num = numerator * other.denominator + other.numerator *
+                denominator;
+      int den = denominator * other.denominator;
+      int gcd = gcd(num, den);
+      num = num / gcd;
+      den = den / gcd;
+      return new Fraction(num, den);
+   }
+   public Fraction subtract(Fraction other)
+   {
+      int num = numerator * other.denominator - other.numerator *
+                denominator;
+      int den = denominator * other.denominator;
+      int gcd = gcd(num, den);
+      num = num / gcd;
+      den = den / gcd;
+      return new Fraction(num, den);
+   }
+   public Fraction multiply(Fraction other)
+   {
+      int num = numerator * other.numerator;
+      int den = denominator * other.denominator;
+      int gcd = gcd(num, den);
+      num = num / gcd;
+      den = den / gcd;
+      return new Fraction(num, den);
+   }
+   public Fraction divide(Fraction other)
+   {
+      int num = numerator * other.denominator;
+      int den = denominator * other.numerator;
+      int gcd = gcd(num, den);
+      num = num / gcd;
+      den = den / gcd;
+      return new Fraction(num, den);
+   }
+   public String toString()
+   {
+      String frac;
+      int gcd = gcd(numerator, denominator);
+      numerator = numerator / gcd;
+      denominator = denominator / gcd;
+      frac = numerator + "/" + denominator;
+      return frac;
+   }
+
+   public static float printAsFloat(Fraction result)
+   {
+      return result.numerator / (float)result.denominator;
+   }
+
+   public static int numberOfFractions()
+   {
+      return created;
+   }
+
+   public static Fraction read(int num, int den)
+   {
+      return new Fraction(num, den);
+   }
+}
+jksingh@abbott ~/cs1400/project $ cat FractionDemo.java
+//Jasmine Singh
+//CS1400, Section 05
+//Project 6  - Arithmetic Operations with Fractions
+//10/18/2020
+import java.util.Scanner;
+
+public class FractionDemo
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+      int total = 0;
+      int count = 0;
+      char ans;
+      do
+      {
+         System.out.println("Please enter two fractions--");
+         System.out.println("Fraction 1:");
+         System.out.println("Enter an integer numerator: ");
+         int num1 = kb.nextInt();
+         System.out.println("Enter an integer denominator: ");
+         int den1 = kb.nextInt();
+         Fraction frac1 = new Fraction(num1, den1);
+
+         System.out.println("Fraction 2:");
+         System.out.println("Enter an integer numerator: ");
+         int num2 = kb.nextInt();
+         System.out.println("Enter an integer denominator: ");
+         int den2 = kb.nextInt();
+         Fraction frac2 = new Fraction(num2, den2);
+
+         Fraction result = new Fraction();
+         result = frac1.add(frac2);
+         total += result.numberOfFractions();
+         System.out.println(frac1 + " + " +  frac2 + " = " + result + " = "
+                             +  result.printAsFloat(result));
+         result = frac1.subtract(frac2);
+         total += result.numberOfFractions();
+         System.out.println(frac1 + " - " + frac2 + " = " + result + " = "
+                            + result.printAsFloat(result));
+
+         result = frac1.multiply(frac2);
+         total += result.numberOfFractions();
+         System.out.println(frac1 + " * " + frac2 + " = " + result + " = "
+                            + result.printAsFloat(result));
+
+         result = frac1.divide(frac2);
+         total += result.numberOfFractions();
+         System.out.println(frac1 + " / " + frac2 + " = " + result + " = "
+                            + result.printAsFloat(result));
+
+         System.out.println("Do you want to continue('Y' or 'y' for yes)");
+         kb.nextLine();
+         ans = kb.next().charAt(0);
+         System.out.println(result.numberOfFractions() +
+                             " fractions have been created");
+
+       }while(ans=='y'||ans=='Y');
+   }
+}
+
+jksingh@abbott ~/cs1400/project $ javac FractionDemo.java
+jksingh@abbott ~/cs1400/project $ java FractionDemo
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+1
+Enter an integer denominator:
+2
+Fraction 2:
+Enter an integer numerator:
+1
+Enter an integer denominator:
+3
+1/2 + 1/3 = 5/6 = 0.8333333
+1/2 - 1/3 = 1/6 = 0.16666667
+1/2 * 1/3 = 1/6 = 0.16666667
+1/2 / 1/3 = 3/2 = 1.5
+Do you want to continue('Y' or 'y' for yes)
+y
+6 fractions have been created
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+3
+Enter an integer denominator:
+0
+Denominator cannot be 0.
+The fraction is set to 0/1
+Fraction 2:
+Enter an integer numerator:
+6
+Enter an integer denominator:
+-2
+0/1 + -3/1 = -3/1 = -3.0
+0/1 - -3/1 = 3/1 = 3.0
+0/1 * -3/1 = 0/1 = 0.0
+0/1 / -3/1 = 0/1 = 0.0
+Do you want to continue('Y' or 'y' for yes)
+n
+12 fractions have been created
+jksingh@abbott ~/cs1400/project $ java FractionDemo
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+0
+Enter an integer denominator:
+-5
+Fraction 2:
+Enter an integer numerator:
+-5
+Enter an integer denominator:
+-20
+0/1 + 1/4 = 1/4 = 0.25
+0/1 - 1/4 = -1/4 = -0.25
+0/1 * 1/4 = 0/1 = 0.0
+0/1 / 1/4 = 0/1 = 0.0
+Do you want to continue('Y' or 'y' for yes)
+y
+6 fractions have been created
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+12
+Enter an integer denominator:
+36
+Fraction 2:
+Enter an integer numerator:
+70
+Enter an integer denominator:
+84
+1/3 + 5/6 = 7/6 = 1.1666666
+1/3 - 5/6 = -1/2 = -0.5
+1/3 * 5/6 = 5/18 = 0.2777778
+1/3 / 5/6 = 2/5 = 0.4
+Do you want to continue('Y' or 'y' for yes)
+y
+12 fractions have been created
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+-8
+Enter an integer denominator:
+2
+Fraction 2:
+Enter an integer numerator:
+10
+Enter an integer denominator:
+10
+-4/1 + 1/1 = -3/1 = -3.0
+-4/1 - 1/1 = -5/1 = -5.0
+-4/1 * 1/1 = -4/1 = -4.0
+-4/1 / 1/1 = -4/1 = -4.0
+Do you want to continue('Y' or 'y' for yes)
+n
+18 fractions have been created
+jksingh@abbott ~/cs1400/project $ java FractionDemo
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+13
+Enter an integer denominator:
+-1
+Fraction 2:
+Enter an integer numerator:
+0
+Enter an integer denominator:
+9
+-13/1 + 0/1 = -13/1 = -13.0
+-13/1 - 0/1 = -13/1 = -13.0
+-13/1 * 0/1 = 0/1 = 0.0
+-13/1 / 0/1 = 0/1 = 0.0
+Do you want to continue('Y' or 'y' for yes)
+y
+6 fractions have been created
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+1212
+Enter an integer denominator:
+123
+Fraction 2:
+Enter an integer numerator:
+-123
+Enter an integer denominator:
+-1212
+404/41 + 41/404 = 164897/16564 = 9.955144
+404/41 - 41/404 = 161535/16564 = 9.752173
+404/41 * 41/404 = 1/1 = 1.0
+404/41 / 41/404 = 163216/1681 = 97.09459
+Do you want to continue('Y' or 'y' for yes)
+y
+12 fractions have been created
+Please enter two fractions--
+Fraction 1:
+Enter an integer numerator:
+3
+Enter an integer denominator:
+-20
+Fraction 2:
+Enter an integer numerator:
+-2
+Enter an integer denominator:
+9
+-3/20 + -2/9 = -67/180 = -0.37222221
+-3/20 - -2/9 = 13/180 = 0.072222225
+-3/20 * -2/9 = 1/30 = 0.033333335
+-3/20 / -2/9 = 27/40 = 0.675
+Do you want to continue('Y' or 'y' for yes)
+n
+18 fractions have been created
+jksingh@abbott ~/cs1400/project $ exit
+exit
+
+Script done on 2020-10-19 21:30:52-07:00 [COMMAND_EXIT_CODE="0"]

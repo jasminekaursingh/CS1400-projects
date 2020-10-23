@@ -1,0 +1,209 @@
+Script started on 2020-10-05 23:31:28-07:00 [TERM="xterm" TTY="/dev/pts/14" COLUMNS="80" LINES="24"]
+jksingh@abbott ~/cs1400/project $ pwd
+/user/jksingh/cs1400/project
+jksingh@abbott ~/cs1400/project $ ls -l
+total 42
+-rw------- 1 jksingh cpp 1407 Sep  6 16:05 Calculations.class
+-rw------- 1 jksingh cpp 1330 Sep  6 16:02 Calculations.java
+-rw------- 1 jksingh cpp 1113 Sep  6 15:22 Calculations.java.save
+-rw------- 1 jksingh cpp 1003 Aug 30 11:13 Pay.class
+-rw-r--r-- 1 jksingh cpp  983 Aug 30 11:12 Pay.java
+-rw------- 1 jksingh cpp 2856 Oct  5 23:28 RPS.class
+-rw------- 1 jksingh cpp 3124 Oct  5 23:28 RPS.java
+-rw------- 1 jksingh cpp 2676 Oct  5 22:31 RPS.java.save
+-rw------- 1 jksingh cpp 2572 Aug 30 11:13 pj1.txt
+-rw------- 1 jksingh cpp 3953 Sep  6 16:07 pj2.txt
+-rw------- 1 jksingh cpp 6955 Sep 11 18:03 pj3.txt
+-rw------- 1 jksingh cpp    0 Oct  5 23:31 pj4.txt
+-rw------- 1 jksingh cpp 1148 Sep 11 18:01 seasons.class
+-rw------- 1 jksingh cpp 1308 Sep 11 18:00 seasons.java
+-rw------- 1 jksingh cpp 1225 Sep 11 17:32 seasons.java.save
+jksingh@abbott ~/cs1400/project $ cat RPS.java
+//Jasmine Singh
+//CS1400, section 05
+//Project 4 - Rock, Paper Scissors Game
+//10/05/2020
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class RPS{
+
+   public static void main(String[] args){
+      Random random = new Random();
+      Scanner kb = new Scanner(System.in);
+      String computer;
+      String user;
+      char playAgain;
+
+      do
+      {
+         do
+         {
+            computer = computerChoice(random);
+            user = userChoice(kb);
+            determineWinner(computer,user);
+         }while(user.equalsIgnoreCase(computer));
+         playAgain = askPlayAgain(kb);
+      }while(playAgain == 'y'||playAgain == 'Y');
+   }
+
+   public static String computerChoice(Random random){
+      int randNum;
+      randNum = random.nextInt(3)+1;
+      String compChoice = "";
+
+      if(randNum == 1)
+         compChoice = "rock";
+      else if(randNum == 2)
+         compChoice = "paper";
+      else if(randNum == 3)
+         compChoice = "scissors";
+
+      return compChoice;
+   }
+
+   public static String userChoice(Scanner kb){
+      System.out.println("Enter rock, paper, or scissors: ");
+      String user = kb.nextLine();
+      if(isValidChoice(user))
+         System.out.println("The user's choice was " + user);
+      else
+         do
+         {
+            System.out.println("Invalid input, enter rock, paper, or scissors: ");
+            user = kb.nextLine();
+         }while(isValidChoice(user)==false);
+
+      return user;
+   }
+
+   public static boolean isValidChoice(String user){
+      if(user.equalsIgnoreCase("scissors")||user.equalsIgnoreCase("rock")||user.equalsIgnoreCase("paper"))
+         return true;
+      else
+         return false;
+   }
+   public static String determineWinner(String computer, String user){
+      String winner = "";
+      user = user.toLowerCase();
+      switch(computer + "|" + user){
+         case"rock|scissors":
+            System.out.println("\nRock smashes scissors.\nThe computer wins!");
+            winner = computer;
+            break;
+         case"rock|paper":
+           System.out.println("\nPaper wraps rock.\nThe user wins!");
+           winner = user;
+           break;
+         case"scissors|rock":
+            System.out.println("\nRock smashes scissors.\nThe user wins!");
+            winner = user;
+            break;
+         case"scissors|paper":
+            System.out.println("\nScissors cut paper.\nThe computer wins!");
+            winner = computer;
+            break;
+         case"paper|scissors":
+            System.out.println("\nScissors cut paper.\nThe user wins!");
+            winner = user;
+            break;
+         case"paper|rock":
+            System.out.println("\nPaper wraps rock.\nThe computer wins!");
+            winner = computer;
+            break;
+      }
+      if(user.equals(computer))
+         System.out.println("\nThe game is tied!\nGet ready to play again!");
+   return winner;
+   }
+
+   public static char askPlayAgain(Scanner kb){
+      System.out.println("\nPlay again? y/n");
+      String input = kb.nextLine();
+      char ans = input.charAt(0);
+      return ans;
+   }
+}
+jksingh@abbott ~/cs1400/project $ javac RPS.java
+jksingh@abbott ~/cs1400/project $ java RPS
+Enter rock, paper, or scissors:
+rock
+The user's choice was rock
+
+Paper wraps rock.
+The computer wins!
+
+Play again? y/n
+y
+Enter rock, paper, or scissors:
+paper
+The user's choice was paper
+
+The game is tied!
+Get ready to play again!
+Enter rock, paper, or scissors:
+scissors
+The user's choice was scissors
+
+Scissors cut paper.
+The user wins!
+
+Play again? y/n
+y
+Enter rock, paper, or scissors:
+ROck
+The user's choice was ROck
+
+Paper wraps rock.
+The computer wins!
+
+Play again? y/n
+y
+Enter rock, paper, or scissors:
+scISSORs
+The user's choice was scISSORs
+
+Scissors cut paper.
+The user wins!
+
+Play again? y/n
+y
+Enter rock, paper, or scissors:
+pAPer
+The user's choice was pAPer
+
+Scissors cut paper.
+The computer wins!
+
+Play again? y/n
+y
+Enter rock, paper, or scissors:
+roc
+Invalid input, enter rock, paper, or scissors:
+rocky
+Invalid input, enter rock, paper, or scissors:
+scissor
+Invalid input, enter rock, paper, or scissors:
+pape
+Invalid input, enter rock, paper, or scissors:
+PAPER
+
+Paper wraps rock.
+The user wins!
+
+Play again? y/n
+y
+Enter rock, paper, or scissors:
+ROCK
+The user's choice was ROCK
+
+Rock smashes scissors.
+The user wins!
+
+Play again? y/n
+SCISsors
+jksingh@abbott ~/cs1400/project $ exit
+exit
+
+Script done on 2020-10-05 23:33:35-07:00 [COMMAND_EXIT_CODE="0"]

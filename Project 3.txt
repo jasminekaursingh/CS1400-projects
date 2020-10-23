@@ -1,0 +1,204 @@
+Script started on 2020-09-11 18:01:14-07:00 [TERM="xterm" TTY="/dev/pts/3" COLUMNS="90" LINES="24"]
+jksingh@costello ~/cs1400/project $ pwd
+/user/jksingh/cs1400/project
+jksingh@costello ~/cs1400/project $ ls -l
+total 24
+-rw------- 1 jksingh cpp 1407 Sep  6 16:05 Calculations.class
+-rw------- 1 jksingh cpp 1330 Sep  6 16:02 Calculations.java
+-rw------- 1 jksingh cpp 1113 Sep  6 15:22 Calculations.java.save
+-rw------- 1 jksingh cpp 1003 Aug 30 11:13 Pay.class
+-rw-r--r-- 1 jksingh cpp  983 Aug 30 11:12 Pay.java
+-rw------- 1 jksingh cpp 2572 Aug 30 11:13 pj1.txt
+-rw------- 1 jksingh cpp 3953 Sep  6 16:07 pj2.txt
+-rw------- 1 jksingh cpp    0 Sep 11 18:01 pj3.txt
+-rw------- 1 jksingh cpp 1148 Sep 11 18:00 seasons.class
+-rw------- 1 jksingh cpp 1308 Sep 11 18:00 seasons.java
+-rw------- 1 jksingh cpp 1225 Sep 11 17:32 seasons.java.save
+jksingh@costello ~/cs1400/project $ cat seasons.java
+//Jasmine Singh
+//cs1400, section 05
+//project 3 - determining the seasons
+//09/11/2020
+
+import java.util.Scanner;
+
+public class seasons{
+   public static void main(String [] args){
+
+   Scanner kb = new Scanner(System.in);
+   //user inputs
+   System.out.println("Enter a month number.");
+   int month = kb.nextInt();
+
+   if(month<1||month>12){
+      System.out.println("Invalid month input");
+      return;
+   }
+   System.out.println("Enter a date.");
+   int date = kb.nextInt();
+
+
+
+   if((month==1||month==3||month==5||month==7||month==8||month==10||month==12) && date<=31 && date>0){
+   }else if((month==4||month==6||month==9||month==11) && date<=30 && date>0){
+   }else if(month==2 && date<=28 && date>0){
+   }else{
+      System.out.println("Invalid date input.");
+      return;
+   }
+
+   //figuring out which season the input is
+   if((month >= 3 && month <= 6 && date <= 20)|| (month == 3 && date == 21)){
+      System.out.println("The season is Spring");
+   }else if((month >= 6 && month <= 9 && date <=20)|| (month == 6 && date == 21)){
+      System.out.println("The season is Summer");
+   }else if((month >= 9 && month <=12 && date <=20)|| (month == 9 && date == 21)){
+      System.out.println("The season is Fall");
+   }else{
+      System.out.println("The season is Winter");
+   }
+   }
+}
+jksingh@costello ~/cs1400/project $ javac seasons.java
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+1
+Enter a date.
+5
+The season is Winter
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+2
+Enter a date.
+5
+The season is Winter
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+4
+Enter a date.
+10
+The season is Spring
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+5
+Enter a date.
+10
+The season is Spring
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+7
+Enter a date.
+15
+The season is Summer
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+8
+Enter a date.
+15
+The season is Summer
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+10
+Enter a date.
+20
+The season is Fall
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+11
+Enter a date.
+20
+The season is Fall
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+3
+Enter a date.
+20
+The season is Spring
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+3
+Enter a date.
+21
+The season is Spring
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+6
+Enter a date.
+20
+The season is Spring
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+6
+Enter a date.
+21
+The season is Summer
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+9
+Enter a date.
+20
+The season is Summer
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+9
+Enter a date.
+21
+The season is Fall
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+12
+Enter a date.
+20
+The season is Fall
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+12
+Enter a date.
+21
+The season is Winter
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+0
+Invalid month input
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+-3
+Invalid month input
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+13
+Invalid month input
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+1
+Enter a date.
+0
+Invalid date input.
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+1
+Enter a date.
+-5
+Invalid date input.
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+2
+Enter a date.
+29
+Invalid date input.
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+6
+Enter a date.
+31
+Invalid date input.
+jksingh@costello ~/cs1400/project $ java seasons
+Enter a month number.
+12
+Enter a date.
+32
+Invalid date input.
+jksingh@costello ~/cs1400/project $ exit
+exit
+
+Script done on 2020-09-11 18:03:12-07:00 [COMMAND_EXIT_CODE="0"]

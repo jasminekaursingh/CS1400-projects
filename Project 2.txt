@@ -1,0 +1,142 @@
+Script started on 2020-09-06 16:05:24-07:00 [TERM="xterm" TTY="/dev/pts/1" COLUMNS="80" LINES="24"]
+jksingh@costello ~/cs1400/project $ pwd
+/user/jksingh/cs1400/project
+jksingh@costello ~/cs1400/project $ ls -l
+total 13
+-rw------- 1 jksingh cpp 1407 Sep  6 16:02 Calculations.class
+-rw------- 1 jksingh cpp 1330 Sep  6 16:02 Calculations.java
+-rw------- 1 jksingh cpp 1113 Sep  6 15:22 Calculations.java.save
+-rw------- 1 jksingh cpp 1003 Aug 30 11:13 Pay.class
+-rw-r--r-- 1 jksingh cpp  983 Aug 30 11:12 Pay.java
+-rw------- 1 jksingh cpp 2572 Aug 30 11:13 pj1.txt
+-rw------- 1 jksingh cpp    0 Sep  6 16:05 pj2.txt
+jksingh@costello ~/cs1400/project $ cat Calculations.java
+//Jasmine Singh
+//CS1400, section 05
+//Project 2 - calculations on integers and strings
+//09/06/2020
+
+import java.util.Scanner;
+
+public class Calculations
+{
+   public static void main(String[] args)
+   {
+      Scanner kb = new Scanner(System.in);
+
+      //Inputs and declaring identifiers
+      System.out.print("Enter a number ");
+      int n1 = kb.nextInt();
+      kb.nextLine();
+      System.out.print("Enter a second number ");
+      int n2 = kb.nextInt();
+      kb.nextLine();
+
+      System.out.print("Enter a string ");
+      String s1 = kb.nextLine();
+      System.out.print("Enter a second string ");
+      String s2 = kb.nextLine();
+
+      double div = ((double)n1)/n2;
+      String up = s1.toUpperCase();
+      String low = s2.toLowerCase();
+      char l1 = s1.charAt(0);
+      char l2 = s2.charAt(0);
+      int len1 = s1.length();
+      int len2 = s2.length();
+      char l3 = s1.charAt(len1-1);
+      char l4 = s2.charAt(len2-1);
+
+      //calculations
+      System.out.println(n1+n2);
+      System.out.println(n1-n2);
+      System.out.println(n1*n2);
+      System.out.println(n1/n2);
+      System.out.println(n1%n2);
+      System.out.println(div);
+      System.out.println(up);
+      System.out.println(low);
+      System.out.println(l1 + " and " + l2);
+      System.out.println(l3 + " and " + l4);
+   }
+}
+jksingh@costello ~/cs1400/project $ javac Calculations.java
+jksingh@costello ~/cs1400/project $ java Calculations
+Enter a number 2
+Enter a second number 3
+Enter a string Hello
+Enter a second string World
+5
+-1
+6
+0
+2
+0.6666666666666666
+HELLO
+world
+H and W
+o and d
+jksingh@costello ~/cs1400/project $ java Calculations
+Enter a number 10
+Enter a second number 5
+Enter a string HI
+Enter a second string HELLO
+15
+5
+50
+2
+0
+2.0
+HI
+hello
+H and H
+I and O
+jksingh@costello ~/cs1400/project $ java Calculations
+Enter a number 6
+Enter a second number 6
+Enter a string turtle
+Enter a second string turtle
+12
+0
+36
+1
+0
+1.0
+TURTLE
+turtle
+t and t
+e and e
+jksingh@costello ~/cs1400/project $ java Calculations
+Enter a number 0
+Enter a second number 3
+Enter a string a
+Enter a second string z
+3
+-3
+0
+0
+0
+0.0
+A
+z
+a and z
+a and z
+jksingh@costello ~/cs1400/project $ java Calculations
+Enter a number 50
+Enter a second number 10
+Enter a string yellow
+Enter a second string Blue
+60
+40
+500
+5
+0
+5.0
+YELLOW
+blue
+y and B
+w and e
+jksingh@costello ~/cs1400/project $ exit
+exit
+
+Script done on 2020-09-06 16:07:48-07:00 [COMMAND_EXIT_CODE="0"]
