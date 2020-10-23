@@ -1,3 +1,5 @@
+//This code recreates the classic Rock, Paper, Scissors game against a computer.
+//No case sensitivity and input validation
 Script started on 2020-10-05 23:31:28-07:00 [TERM="xterm" TTY="/dev/pts/14" COLUMNS="80" LINES="24"]
 jksingh@abbott ~/cs1400/project $ pwd
 /user/jksingh/cs1400/project
